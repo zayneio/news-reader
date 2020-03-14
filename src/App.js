@@ -71,7 +71,7 @@ console.log('filters:', filters)
         articles={articles}
         handlePageChange={handlePageChange}        
       />
-
+      <div>Data provided by http://newsapi.org</div>
     </div>
   );
 }
