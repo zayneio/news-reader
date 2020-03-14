@@ -13,7 +13,7 @@ const App = () => {
     fromDate: '2020-02-14',
     toDate: ''
   })
-
+console.log('filters:', filters)
   // Get an initial set of articles based off the default filter settings
   useEffect(() => queryTopic(), [])
 

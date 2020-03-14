@@ -8,7 +8,6 @@ const Pagination = (props) => {
 
   const paginationBar = pageTotal.map( (page) => {
     const value = page + 1
-    console.log(value)
     return (
       <li className="PaginationListItem" key={page}>
         <button className={value === props.currentPage ? 'active' : null} onClick={props.handlePageChange.bind(this, value)}>
