@@ -1,0 +1,61 @@
+
+
+.ArticleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.Article {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0,0,0,0.1);
+  margin: 12px;
+  text-align:left;
+  padding: 20px 40px;
+}
+
+.Left {
+  width: 30%;
+}
+
+.Right {
+  margin-left: 5%;
+  width: 65%;
+}
+
+
+.Author {
+  font-size: 12px; 
+}
+
+.Title {
+  font-size: 22px; 
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.Description {
+  font-size: 16px; 
+  line-height: 24px;
+}
+
+
+.CoverImg {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.ButtonContainer {
+  padding: 24px 0;
+}
+
+.Button {
+  height: 42px;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+  text-decoration: none;
+  padding: 10px 20px;
+}

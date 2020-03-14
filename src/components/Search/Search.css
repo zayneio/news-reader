@@ -1,0 +1,32 @@
+.Search {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  padding: 20px 40px;
+}
+
+.SearchBar{
+  width: 72%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-right: 3%;
+  padding: 0 10px;
+}
+
+.SearchButton{
+  width: 25%;
+  height: 42px;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+.SearchButton:hover {
+  border: 1px solid #333;
+  color: #333;
+  background: #fff;
+}
