@@ -1,4 +1,18 @@
+## NewsReader
+A simple news reader react app built using the http://newsapi.org API
+
+Current Features:
+- Search Topics
+- Sort results by published date, relevancy or popularity
+- Filter search results by from date and to date
+- Paginated Article Results
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+--- 
+
 
 ## Available Scripts
 
