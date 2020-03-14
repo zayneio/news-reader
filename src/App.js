@@ -1,50 +1,77 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import './App.css';
-import Search from './components/Search/Search'
-import Article from './components/Article/Article'
+import Articles from './components/Articles/Articles'
+import Settings from './components/Settings/Settings'
 
-function App() {
+const App = () => {
+  const [currentPage, setCurrentPage] = useState(1)
   const [articles, setArticles] = useState([])
-  const [topic, setTopic] = useState('coronavirus')
+  const [filters, setFilters] = useState({
+    topic: 'coronavirus',
+    sortBy: 'publishedAt',
+    fromDate: '2020-02-14',
+    toDate: ''
+  })
 
-  useEffect(() => {
-    queryTopic()
-  }, [])
+  // Get an initial set of articles based off the default filter settings
+  useEffect(() => queryTopic(), [])
 
+  // Make an api request to our API with the current filter settings
   const queryTopic = () => {
-    axios.get(`${process.env.REACT_APP_API_URL}/v2/everything?q=${topic}&from=2020-02-14&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}`)
-    .then( res => {
-      console.log(res.data.articles)
-      setArticles(res.data.articles)
+    axios.get(`${process.env.REACT_APP_API_URL}/v2/everything`,
+    {
+      params: {
+        q: filters.topic,
+        from: filters.fromDate,
+        to: filters.toDate,
+        sortBy: filters.sortBy,
+        apiKey: process.env.REACT_APP_API_KEY
+      }
     })
-    .catch( res => console.log('Error:', res))
+    .then( res => setArticles(res.data.articles))
+    .catch( res => console.log('Error:', res)) //TODO: add better error handling
   }
 
-  const handleChange = (e) => {
-    e.preventDefault()
-
-    setTopic(e.target.value)
-  }
-
+  // Make a new api request to our 3rd party news api on submit
   const handleSubmit = (e) => {
     e.preventDefault()
 
     queryTopic()
   }
 
-  const list = articles.map( (article,index) => {
-    return (
-      <Article key={index} article={article}/>
-    )
-  })
+  // Handle page changes by the user
+  const handlePageChange = (page, e) => {
+    e.preventDefault()
+
+    setCurrentPage(page)
+  }
+
+  // Handle filter changes
+  const handleChange = (e) => {
+    e.preventDefault()
+
+    setFilters({ ...filters, [e.target.name]: e.target.value })
+  }
+
+  const { topic, sortBy, fromDate, toDate } = filters
 
   return (
     <div className="App">
-      <Search topic={topic} handleChange={handleChange} handleSubmit={handleSubmit}/>
-      <div className="ArticleContainer">
-        {list}
-      </div>
+      <Settings
+        topic={topic} 
+        handleChange={handleChange} 
+        handleSubmit={handleSubmit}
+        sortBy={sortBy} 
+        fromDate={fromDate} 
+        toDate={toDate}
+      />
+      <Articles
+        currentPage={currentPage} 
+        articles={articles}
+        handlePageChange={handlePageChange}        
+      />
+
     </div>
   );
 }

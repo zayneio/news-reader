@@ -1,0 +1,24 @@
+.PaginationList{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0;
+}
+
+.PaginationListItem {
+  list-style-type: none;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.PaginationListItem button {
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.PaginationListItem button.active {
+  background: #333;
+  color :#fff;
+  border: 1px solid #333;
+}

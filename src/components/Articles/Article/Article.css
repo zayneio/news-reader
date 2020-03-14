@@ -28,10 +28,13 @@
   font-size: 12px; 
 }
 
-.Title {
+.Title, .Title a {
   font-size: 22px; 
   font-weight: bold;
   padding: 10px 0;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .Description {

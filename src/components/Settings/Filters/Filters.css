@@ -1,0 +1,39 @@
+.FilterBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.Filter {
+  width: 50%;
+  padding: 0 40px;
+}
+
+.Filter select,
+.Filter input {
+  height: 40px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.Filter select { width: 100%; }
+.Filter input { padding: 0 20px; width: 75%;}
+
+.Filter label {
+  text-align:left;
+  float: left;
+  padding-bottom: 8px;
+}
+
+.DateFilters {
+  display: flex;
+  flex-direction: row; 
+}
+.DateFilters label {
+  width: 100%;
+}
+
+.DateFilters:first-child {
+  margin-right: 10px;
+  width: 100%;
+}
