@@ -1,6 +1,8 @@
 ## NewsReader
 A simple news reader react app built using the http://newsapi.org API
 
+![App Demo](https://github.com/zayneio/news-reader/blob/master/public/demo.png?raw=true)
+
 Current Features:
 - Search Topics
 - Sort results by published date, relevancy or popularity
