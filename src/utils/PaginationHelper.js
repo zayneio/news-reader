@@ -1,5 +1,5 @@
-const PaginationHelper =(articles, pages, currentPage) => {
-  return articles.slice((currentPage - 1) * pages, currentPage * pages);
+const PaginationHelper =(articles, pageSize, currentPage) => {
+  return articles.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 }
 
 export default PaginationHelper
