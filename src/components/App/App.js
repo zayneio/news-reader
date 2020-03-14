@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import './App.css';
-import Articles from './components/Articles/Articles'
-import Settings from './components/Settings/Settings'
+import Articles from '../Articles/Articles'
+import Settings from '../Settings/Settings'
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -13,7 +13,7 @@ const App = () => {
     fromDate: '2020-02-14',
     toDate: ''
   })
-console.log('filters:', filters)
+
   // Get an initial set of articles based off the default filter settings
   useEffect(() => queryTopic(), [])
 

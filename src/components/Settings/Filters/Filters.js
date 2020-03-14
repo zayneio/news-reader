@@ -3,7 +3,7 @@ import './Filters.css'
 
 const Filters = (props) => {
   const options = ['relevancy', 'popularity', 'publishedAt'].map(option => {
-    return (<option selected={option === props.sortBy} key={option} value={option}>{option}</option>)
+    return (<option key={option} value={option}>{option}</option>)
   })
 
   return (
@@ -12,7 +12,7 @@ const Filters = (props) => {
       <div className="FilterBox">
         <div className="Filter">
           <label>Sort By:</label>
-          <select onChange={props.handleChange} name="sortBy">
+          <select defaultValue={'publishedAt'} onChange={props.handleChange} name="sortBy">
             {options}
           </select>
         </div>
