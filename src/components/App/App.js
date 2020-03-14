@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-import './App.css';
+import './App.css'
 import Articles from '../Articles/Articles'
 import Settings from '../Settings/Settings'
 
@@ -76,4 +76,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App

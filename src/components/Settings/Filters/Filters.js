@@ -2,9 +2,7 @@ import React from 'react'
 import './Filters.css'
 
 const Filters = (props) => {
-  const options = ['relevancy', 'popularity', 'publishedAt'].map(option => {
-    return (<option key={option} value={option}>{option}</option>)
-  })
+  const options = ['relevancy', 'popularity', 'publishedAt'].map(option => <option key={option} value={option}>{option}</option>)
 
   return (
     <div className="FiltersContainer">
