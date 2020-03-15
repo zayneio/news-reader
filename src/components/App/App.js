@@ -29,12 +29,7 @@ const App = () => {
         apiKey: process.env.REACT_APP_API_KEY
       }
     })
-    .then( res => {
-      let articles = res.data.articles
-      setArticles(articles.map( (article, index) => {
-        return { ...article, id: `article-${index}` } 
-      }))
-    })
+    .then( res => res => setArticles(res.data.articles))
     .catch( res => console.log('Error:', res)) //TODO: add better error handling
   }
 
