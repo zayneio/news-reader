@@ -29,7 +29,7 @@ const App = () => {
         apiKey: process.env.REACT_APP_API_KEY
       }
     })
-    .then( res => res => setArticles(res.data.articles))
+    .then( res => setArticles(res.data.articles))
     .catch( res => console.log('Error:', res)) //TODO: add better error handling
   }
 
