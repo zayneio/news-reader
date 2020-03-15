@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import React, { useState } from "react"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 import Article from './Article/Article'
 
 // Build the final data structure we need for DND.
