@@ -2,9 +2,7 @@ import React from 'react'
 import './Filters.css'
 
 const Filters = (props) => {
-  const options = ['relevancy', 'popularity', 'publishedAt'].map(option => {
-    return (<option selected={option === props.sortBy} key={option} value={option}>{option}</option>)
-  })
+  const options = ['relevancy', 'popularity', 'publishedAt'].map(option => <option key={option} value={option}>{option}</option>)
 
   return (
     <div className="FiltersContainer">
@@ -12,7 +10,7 @@ const Filters = (props) => {
       <div className="FilterBox">
         <div className="Filter">
           <label>Sort By:</label>
-          <select onChange={props.handleChange} name="sortBy">
+          <select defaultValue={'publishedAt'} onChange={props.handleChange} name="sortBy">
             {options}
           </select>
         </div>

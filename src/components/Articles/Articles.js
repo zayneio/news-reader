@@ -1,21 +1,16 @@
 import React from 'react'
 import Pagination from './Pagination/Pagination'
 import PaginationHelper from '../../utils/PaginationHelper'
-import Article from './Article/Article'
+import DragNDrop from './DragNDrop'
 
 const Articles = (props) => {
-  const paginatedArticles = PaginationHelper(props.articles, 10, props.currentPage)
-  const articles = paginatedArticles.map( (article, index) => {
-    return (
-      <Article key={index} article={article}/>
-    )
-  })
+  const articles = PaginationHelper(props.articles, 10, props.currentPage)
 
   return (
     <div className="ArticleContainer">
-      <Pagination currentPage={props.currentPage} articles={props.articles}handlePageChange={props.handlePageChange}/>
-      {articles}
-      <Pagination currentPage={props.currentPage} articles={props.articles}handlePageChange={props.handlePageChange}/>
+      <Pagination currentPage={props.currentPage} articles={props.articles} handlePageChange={props.handlePageChange}/>
+      <DragNDrop articles={articles}/>
+      <Pagination currentPage={props.currentPage} articles={props.articles} handlePageChange={props.handlePageChange}/>
     </div>
   )
 }
